@@ -204,3 +204,67 @@ section{
     font-size: 20px;
     transition: .2s;
 }
+
+@media(max-width: 800px){
+    main{
+        position: absolute;
+        width: 100%;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    #side-menu.hide #x-btn{
+        transform: translateX(-20%)
+    }
+
+    #side-menu.hide #menu-items,
+    #side-menu.hide #logout{
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    #side-menu.hide {
+        background-color: transparent;
+    }
+}
+
+@media(orientation: landscape) and (max-width: 1000px){
+    main{
+        position: absolute;
+        width: 100%;
+        padding: 2rem;
+        text-align: left;
+    }
+
+    #side-menu{
+        font-size: 10px;
+        padding: 10px;
+        overflow-y: auto;
+    }
+
+    #side-menu.hide #menu-items,
+    #side-menu.hide #logout{
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    #side-menu.hide {
+        background-color: transparent;
+    }
+
+    #x-btn{
+        transform: translateX(200px);
+    }
+}
+
+@media(orientation: landscape) and (max-width: 800px){
+    #side-menu{
+        font-size: 10px;
+        padding: 10px;
+        overflow-y: auto;
+    }
+
+    #x-btn{
+        transform: translateX(200px);
+    }
+}
