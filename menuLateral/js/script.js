@@ -1,14 +1,14 @@
-const xBTN = document.querySelector('#x-btn i');
+const openBTN = document.querySelector('#open-btn i');
 const sideMenu = document.querySelector('#side-menu');
 
-xBTN.addEventListener('click', ()=>{
+openBTN.addEventListener('click', ()=>{
     sideMenu.classList.toggle('hide');
 
-    if(xBTN.classList.contains('bi-list')) {
-        xBTN.classList.remove('bi-list');
-        xBTN.classList.add('bi-x-circle-fill');
+    if(openBTN.classList.contains('bi-arrow-right-square-fill')) {
+        openBTN.classList.remove('bi-arrow-right-square-fill');
+        openBTN.classList.add('bi-arrow-left-square-fill');
     } else{
-        xBTN.classList.remove('bi-x-circle-fill');
-        xBTN.classList.add('bi-list');
+        openBTN.classList.remove('bi-arrow-left-square-fill');
+        openBTN.classList.add('bi-arrow-right-square-fill');
     }
 });
