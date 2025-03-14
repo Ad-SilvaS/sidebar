@@ -3,77 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
-    <title>Menu Lateral</title>
+    <title>Drop</title>
 </head>
 <body>
-    <nav id="side-menu" class="hide">
-        <div id="user">
-            <img src="img/vector-users-icon.jpg" alt="Avatar" id="user-avatar">
+    <nav id="sidebar" class="close">
+        <div id="sidebar-content">
+            <div id="user">
+                <img src="img/vector-users-icon.jpg" alt="user avatar">
 
-            <div id="user-info">
-                <span>Lorem ipsum sit</span>
-                <span>Lorem ipsum dolor</span>
+                <div id="user-info">
+                    <span>FirstName LastName</span>
+                    <span>Ocupation</span>
+                </div>
+            </div>
+
+            <ul id="menu">
+                <li class="menu-item">
+                    <a href="#">
+                        <i class="bi bi-house-door"></i>
+                        <span class="item-description">Home</span>
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">
+                        <i class="bi bi-bar-chart-line"></i>
+                        <span class="item-description">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">
+                        <i class="bi bi-calendar-range"></i>
+                        <span class="item-description">Agenda</span>
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">
+                        <i class="bi bi-chat-text"></i>
+                        <span class="item-description">Mensagens</span>
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">
+                        <i class="bi bi-images"></i>
+                        <span class="item-description">Imagens</span>
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">
+                        <i class="bi bi-person-bounding-box"></i>
+                        <span class="item-description">Perfil</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div id="open-btn">
+                <i class="bi bi-arrow-left-circle-fill"></i>
             </div>
         </div>
-
-        <ul id="menu-items">
-            <li class="menu-item">
-                <a href="#">
-                    <span class="icon">
-                        <i class="bi bi-houses"></i>
-                    </span>
-                    <span class="item-link">Home</span>
-                </a>
-            </li>
-
-            <li class="menu-item">
-                <a href="#">
-                    <span class="icon">
-                        <i class="bi bi-columns-gap"></i>
-                    </span>
-                    <span class="item-link">Dashboard</span>
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="#">
-                    <span class="icon">
-                        <i class="bi bi-images"></i>
-                    </span>
-                    <span class="item-link">Imagens</span>
-                </a>
-            </li>
-
-            <li class="menu-item">
-                <a href="#">
-                    <span class="icon">
-                        <i class="bi bi-calendar2-week"></i>
-                    </span>
-                    <span class="item-link">Agenda</span>
-                </a>
-            </li>
-
-            <li class="menu-item">
-                <a href="#">
-                    <span class="icon">
-                        <i class="bi bi-gear-fill"></i>
-                    </span>
-                    <span class="item-link">Confirações</span>
-                </a>
-            </li>
-
-            <li class="menu-item">
-                <a href="#">
-                    <span class="icon">
-                        <i class="bi bi-person-lines-fill"></i>
-                    </span>
-                    <span class="item-link">Perfil</span>
-                </a>
-            </li>
-        </ul>
 
         <div id="logout">
             <button>
@@ -81,38 +75,6 @@
                 <span>Sair</span>
             </button>
         </div>
-
-        <div id="open-btn">
-            <i class="bi bi-arrow-right-square-fill"></i>
-        </div>
     </nav>
-
-    <main>
-        <header id="main-header">
-            <h1>Título</h1>
-        </header>
-
-        <section>
-            <div id="container">
-                <div class="title">
-                    <h2>Conteúdo</h2>
-                </div>
-
-                <div class="content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, fuga? Eos architecto accusamus ea eum aut possimus blanditiis doloribus quibusdam repellat vero exercitationem iusto deserunt dignissimos consequuntur atque, incidunt adipisci.</p>
-
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti, cupiditate molestiae, soluta facilis ex odio fugit aliquid facere, itaque ad rerum enim corporis explicabo. Iure laborum totam similique! Architecto, inventore!</p>
-
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti, cupiditate molestiae, soluta facilis ex odio fugit aliquid facere, itaque ad rerum enim corporis explicabo. Iure laborum totam similique! Architecto, inventore!</p>
-
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti, cupiditate molestiae, soluta facilis ex odio fugit aliquid facere, itaque ad rerum enim corporis explicabo. Iure laborum totam similique! Architecto, inventore!</p>
-
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti, cupiditate molestiae, soluta facilis ex odio fugit aliquid facere, itaque ad rerum enim corporis explicabo. Iure laborum totam similique! Architecto, inventore!</p>
-
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti, cupiditate molestiae, soluta facilis ex odio fugit aliquid facere, itaque ad rerum enim corporis explicabo. Iure laborum totam similique! Architecto, inventore!</p>
-                </div>
-            </div>
-        </section>
-    </main>
 </body>
 </html>
