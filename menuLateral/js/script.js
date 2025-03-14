@@ -1,14 +1,14 @@
-const openBTN = document.querySelector('#open-btn i');
-const sideMenu = document.querySelector('#side-menu');
+const sidebar = document.querySelector('#sidebar');
+const openBtn = document.querySelector('#open-btn i');
 
-openBTN.addEventListener('click', ()=>{
-    sideMenu.classList.toggle('hide');
+openBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('close');
 
-    if(openBTN.classList.contains('bi-arrow-right-square-fill')) {
-        openBTN.classList.remove('bi-arrow-right-square-fill');
-        openBTN.classList.add('bi-arrow-left-square-fill');
+    if(sidebar.classList.contains('close')){
+        openBtn.classList.remove('bi-arrow-left-circle-fill');
+        openBtn.classList.add('bi-arrow-right-circle-fill');
     } else{
-        openBTN.classList.remove('bi-arrow-left-square-fill');
-        openBTN.classList.add('bi-arrow-right-square-fill');
+        openBtn.classList.remove('bi-arrow-right-circle-fill');
+        openBtn.classList.add('bi-arrow-left-circle-fill');
     }
-});
+})
