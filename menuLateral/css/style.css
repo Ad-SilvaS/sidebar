@@ -1,323 +1,215 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Roboto', sans-serif, helvetica;
 }
 
 body{
-    min-height: 100vh;
-    display: flex;
-    background-color: #328792;
-}
-
-main{
-    min-height: 100vh;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem 2.5rem 3rem calc(110px + 20px);
-}
-
-section{
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    .title{
-        margin: 2rem 0;
-    }
-
-    .content{
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-}
-
-#side-menu{
     height: 100vh;
-    width: 270px;
-    position: fixed;
-    background-color: rgba(4, 46, 51, 0.5);
+    width: 100%;
+    background-color: rgb(7, 106, 119);
+}
+
+#sidebar{
+    height: 100vh;
+    width: 200px;
+    background-color: rgba(27, 161, 185, 0.363);
+    border-radius: 0 15px 15px 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    padding: 40px 0 40px 0;
-    border-radius: 0 8px 8px 0;
-    transition: .4s ease-in-out;
-    z-index: 2;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    position: relative;
+    transition: all .4s ease;
+}
+
+#sidebar-content{
+    width: 100%;
+
+    ul{
+        list-style: none;
+    }
 }
 
 #user{
     display: flex;
-    gap: 30px;
-    padding: 0 16px;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+    gap: 10px;
+
+    #user-info{
+        color: #ebe7e7;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        height: 100%;
+        gap: 10px;
+        white-space: nowrap;
+        opacity: 1;
+        transition: all .3s .4s;
+    }
+
+    #user-info span:first-child{
+        line-height: 20px;
+    }
+
+    #user-info span:last-child{
+        font-size: 13px;
+    }
 }
 
 #user img{
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
 }
 
-#user-info{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1px;
-    color: #fff;
-    font-size: 15px;
-    white-space: nowrap;
-    transition: all .4s .2s;
-}
-
-#user-info span{
-    font-size: 16px;
-}
-
-#user-info span:last-child{
-    font-size: 13px;
-    color: #cec2ce;
-}
-
-#side-menu.hide #user-info{
-    white-space: nowrap;
-}
-
-#menu-items{
-    height: 100%;
+#menu{
     width: 100%;
-    list-style: none;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0 16px;
+    gap: 20px;
 }
 
 .menu-item{
     width: 100%;
+    height: 50px;
+    display: flex;
+
+    a{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: #fff;
+        cursor: pointer;
+        padding: 0 20px;
+        gap: 10px;
+
+        i{
+            font-size: 22px;
+            transition: all .2s;
+        }
+
+        span{
+            opacity: 1;
+            font-size: 18px;
+            transition: all .2s .4s;
+        }
+    }
+
+    a:hover{
+        background-color: rgb(7, 106, 119);
+    }
+}
+
+#open-btn{
+    position: absolute;
+    cursor: pointer;
+    top: 80px;
+    left: 190px;
+    font-size: 30px;
+    transition: all .4s ease;
+}
+
+#logout{
+    border-top: 4px solid rgb(7, 106, 119);
+    border-radius: 7px 7px 0 0;
+    width: 100%;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-  
-#logout{
-    padding-left: 20px;
-}
-
-#logout i{
-    display: none;
-    transition: all .4s;
-}
-
-#open-btn{
-    position: absolute;
-    top: 105px;
-    left: 65px;
-    cursor: pointer;
-}
-
-#open-btn i {
-    color: #fff;
-    font-size: 27px;
-    cursor: pointer;
-    transition: all .4s;
-}
-
-#side-menu.hide #open-btn i{
-    transition: all .4s;
-}
-
-#open-btn{
-    transform: translateX(190px);
-    transition: all .4s ease-in-out;
-    border: none;
-}
-
-#side-menu.hide #open-btn{
-    transform: translateX(0);
-    transition: all .4s ease-in-out;
-}
-
-.icon{
-    transition: transform .4s;
-}
-
-#side-menu.hide .menu-item:hover .icon{
-    transform: scale(1.3);
-}
-
-.menu-item:hover{
-    background-color: #328792;
-}
-
-.menu-item a{
-    width: 100%;
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-#logout{
-    border-top: 2px solid #328792;
-    padding-top: 20px;
-    padding-right: 20px;
-    width: 100%;
 
     button{
-        padding: 10px 0;
-        width: 100%;
-        border: none;
-        border-radius: 8px;
         display: flex;
-        text-align: left;
         align-items: center;
         justify-content: center;
-        gap: 12px;
-        font-size: 15px;
+        gap: 10px;
+        width: 80px;
+        height: 40px;
+        border: none;
+        border-radius: 6px;
         cursor: pointer;
-        transition: transform .4s;
+        margin-top: 13px;
+        transition: all .3s ease;
+        font-size: 20px;
+        position: relative;
+        transition: all .2s;
+
+        i{
+            opacity: 0;
+            position: absolute;
+            transition: all .2s;
+        }
 
         span{
-            font-size: 18px;
+            opacity: 1;
+            transition: all .4s .3s;
+            position: absolute;
         }
     }
-    
+
     button:hover{
-        transform: scale(1.05);
+        transform: translateY(-8%);
     }
 }
 
-#side-menu.hide #logout button{
-    transform: scale(1);
+#sidebar.close{
+    width: 110px;
 }
 
-#side-menu.hide{
-    width: 80px;
-    transition: .4s ease-in-out;
-}
-
-.item-link{
-    transition: .4s .2s;
-}
-
-#side-menu.hide .item-link,
-#side-menu.hide #user-info{
+#sidebar.close #user #user-info{
     opacity: 0;
-    pointer-events: none;
-    transition: .2s;
+    transition: all .2s;
 }
 
-#logout button span{
-    transition: .2s .4s;
-}
+#sidebar.close #menu .menu-item{
+    a{
+        span{
+            opacity: 0;
+            transition: all .2s;
+        }
 
-#side-menu.hide #logout button span{
-    opacity: 0;
-    pointer-events: none;
-    transition: .1s;
-}
-
-#side-menu.hide #logout button{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    transition: .4s ease-in-out;
-}
-
-#side-menu.hide #logout button i{
-    position: absolute;
-    display: block;
-    font-size: 17px;
-}
-
-@media(max-width: 800px){
-    main{
-        position: absolute;
-        width: 100%;
-        padding: 2rem;
-        text-align: center;
+        i{
+            margin-left: 20px;
+            font-size: 30px;
+            transition: all .2s .2s;
+        }
     }
 
-    #side-menu.hide #menu-items,
-    #side-menu.hide #logout,
-    #side-menu.hide #user{
+}
+
+#sidebar.close #open-btn{
+    transform: translateX(-90px);
+}
+
+
+#sidebar.close #logout button{
+    width: 50px;
+    height: 40px;
+    transition: all .2s;
+    span{
         opacity: 0;
+        overflow: hidden;
+        text-transform: ellipsis;
+        white-space: nowrap;
         pointer-events: none;
+        
+        transition: all .2s;
     }
 
-    #side-menu.hide #open-btn{
-        left: 0;
-    }
-
-    #open-btn{
-        left: 65px;
-    }
-
-    #side-menu.hide {
-        background-color: transparent;
-    }
-}
-
-@media(orientation: landscape) and (max-width: 1000px){
-    main{
-        position: absolute;
-        width: 100%;
-        padding: 2rem;
-        text-align: left;
-    }
-
-    #side-menu{
-        font-size: 10px;
-        padding: 10px;
-        overflow-y: auto;
-    }
-
-    #side-menu.hide #menu-items,
-    #side-menu.hide #logout{
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    #side-menu.hide {
-        background-color: transparent;
-    }
-
-    #open-btn{
-        top: 50px;;
-        left: 44px;
-    }
-}
-
-@media(orientation: landscape) and (max-width: 800px){
-    #side-menu{
-        font-size: 10px;
-        padding: 10px;
-        overflow-y: auto;
-    }
-
-    #open-btn{
-        transform: translateX(200px);
+    i{
+        opacity: 1;
+        transition: all .4s .3s;
     }
 }
