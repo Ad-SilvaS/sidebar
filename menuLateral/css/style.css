@@ -8,23 +8,40 @@
 }
 
 body{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: rgb(7, 106, 119);
+    display: flex;
+    background-image: url('/img/glowing-lines-human-heart-3d-shape-dark-background-generative-ai.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+main{
+    height: 100vh;
+    margin-left: 250px;
+    padding-top: 20px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #sidebar{
     height: 100vh;
     width: 200px;
-    background-color: rgba(27, 161, 185, 0.363);
+    background-color: rgba(0, 0, 0, 0.363);
+    backdrop-filter: blur(5px);
     border-radius: 0 15px 15px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 20px 0;
-    position: relative;
+    position: absolute;
     transition: all .4s ease;
+    z-index: 2;
 }
 
 #sidebar-content{
@@ -47,12 +64,12 @@ body{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        white-space: nowrap;
         align-items: center;
         justify-content: center;
         font-size: 18px;
         height: 100%;
         gap: 10px;
-        white-space: nowrap;
         opacity: 1;
         transition: all .3s .4s;
     }
@@ -92,7 +109,7 @@ body{
         text-decoration: none;
         color: #fff;
         cursor: pointer;
-        padding: 0 20px;
+        padding: 0 30px;
         gap: 10px;
 
         i{
@@ -108,7 +125,7 @@ body{
     }
 
     a:hover{
-        background-color: rgb(7, 106, 119);
+        background-color: rgba(122, 119, 119, 0.527);
     }
 }
 
@@ -118,11 +135,12 @@ body{
     top: 80px;
     left: 190px;
     font-size: 30px;
+    color: #fff;
     transition: all .4s ease;
 }
 
 #logout{
-    border-top: 4px solid rgb(7, 106, 119);
+    border-top: 4px solid rgba(177, 116, 4, 0.664);
     border-radius: 7px 7px 0 0;
     width: 100%;
     height: 100px;
@@ -181,7 +199,7 @@ body{
         }
 
         i{
-            margin-left: 20px;
+            margin-left: 10px;
             font-size: 30px;
             transition: all .2s .2s;
         }
@@ -211,5 +229,136 @@ body{
     i{
         opacity: 1;
         transition: all .4s .3s;
+    }
+}
+
+.slider-wrapper{
+    overflow: hidden;
+    max-width: 1200px;
+    margin:  0 75px 55px;
+}
+
+.card-list .card-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    padding: 35px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.363);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+.card-list .card-item img{
+    width: 150px ;
+    height: 150px;
+    border-radius: 50%;
+    padding: 3px;
+    border: 2px solid #fff;
+    margin-bottom: 40px;
+}
+
+.card-list .card-item .user-profession{
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #e3e3e3;
+    margin: 14px 0 40px;
+}
+
+.card-list .card-item .message-button{
+    font-size: 1.25rem;
+    padding: 10px 35px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.card-list .card-item .message-button:hover{
+    background-color: transparent;
+    color: #e3e3e3;
+    border: 1px solid #fff;
+    transform: translateY(-3px);
+}
+
+.slider-wrapper .swiper-pagination-bullet{
+    background: #fff;
+    height: 15px;
+    width: 15px;
+}
+
+.slider-wrapper .swiper-slide-button{
+    color: #fff;
+    margin-top: -50px;
+}
+
+.slider-wrapper .swiper-slide-button:hover{
+    color: #4658ff;
+}
+
+@media (max-width: 900px){
+    main{
+        margin-left: 50px;
+        padding-top: 20px;
+        padding-right: 30px;
+    }
+
+    #sidebar{
+        height: 100%;
+        position: fixed;
+    }
+
+    #sidebar.close{
+        transform: translateX(-110px);
+    }
+
+    #open-btn{
+        left: 199px;
+    }
+
+}
+
+@media (max-width: 1000px) and (orientation: landscape){
+    main{
+        margin-left: 80px;
+        padding-right: 60px;
+    }
+
+    #sidebar{
+        height: 100%;
+        overflow: auto;
+        overflow-wrap: break-word;
+        border-radius: 0 0 0 0;
+    }
+
+    #open-btn{
+        left: 170px;
+    }
+
+    #sidebar.close{
+        width: 100px;
+        transform: translateX(-60px);
+    }
+
+    #sidebar.close #open-btn{
+        left: 155px;
+    }
+
+    #sidebar.close #sidebar-content,
+    #sidebar.close #logout{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    .slider-wrapper{
+        margin: 0 10px 40px;
+    }
+
+    .slider-wrapper .swiper-slide-button{
+        display: none;
     }
 }
