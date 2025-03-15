@@ -301,9 +301,10 @@ main{
 
 @media (max-width: 900px){
     main{
-        margin-left: 50px;
+        margin: auto;
         padding-top: 20px;
-        padding-right: 30px;
+        overflow: hidden;
+        width: 300px;
     }
 
     #sidebar{
@@ -318,44 +319,33 @@ main{
     #open-btn{
         left: 199px;
     }
-
-}
-
-@media (max-width: 1000px) and (orientation: landscape){
-    main{
-        margin-left: 80px;
-        padding-right: 60px;
-    }
-
-    #sidebar{
-        height: 100%;
-        overflow: auto;
-        overflow-wrap: break-word;
-        border-radius: 0 0 0 0;
-    }
-
-    #open-btn{
-        left: 170px;
-    }
-
-    #sidebar.close{
-        width: 100px;
-        transform: translateX(-60px);
-    }
-
-    #sidebar.close #open-btn{
-        left: 155px;
-    }
-
-    #sidebar.close #sidebar-content,
-    #sidebar.close #logout{
-        display: none;
-    }
-}
-
-@media (max-width: 768px){
     .slider-wrapper{
         margin: 0 10px 40px;
+        width: 250px;
+        height: 500px;
+    }
+
+    .slider-wrapper .card-list .card-item{
+        width: 100px;
+        height: 350px;
+    }
+
+    .card-list .card-item .user-name{
+        font-size: 1.2rem;
+    }
+
+    .card-list .card-item .user-profession{
+        font-size: .8rem;
+        margin-bottom: 20px;
+    }
+
+    .card-list .card-item .message-button{
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .slider-wrapper .swiper-pagination{
+        margin-bottom: 100px;
     }
 
     .slider-wrapper .swiper-slide-button{
